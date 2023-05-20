@@ -1,0 +1,66 @@
+<CoordinateSystem> { Z-up } 
+<Material> Material {
+  <Scalar> diffr { 0.640000 }
+  <Scalar> diffg { 0.640000 }
+  <Scalar> diffb { 0.640000 }
+  <Scalar> specr { 0.500000 }
+  <Scalar> specg { 0.500000 }
+  <Scalar> specb { 0.500000 }
+  <Scalar> shininess { 12.5 }
+  <Scalar> ambr { 1.000000 }
+  <Scalar> ambg { 1.000000 }
+  <Scalar> ambb { 1.000000 }
+  <Scalar> emitr { 0.000000 }
+  <Scalar> emitg { 0.000000 }
+  <Scalar> emitb { 0.000000 }
+}
+
+<Texture> Texture {
+  "./tex/game_over.png"
+  <Scalar> envtype { MODULATE }
+  <Scalar> minfilter { LINEAR_MIPMAP_LINEAR }
+  <Scalar> magfilter { LINEAR_MIPMAP_LINEAR }
+  <Scalar> wrap { REPEAT }
+}
+
+  <Group> Plane.001 {
+    <Transform> {
+      <Matrix4> {
+        1.0 0.0 0.0 0.0 
+        0.0 7.549790126404332e-08 1.0 0.0 
+        0.0 -1.0 7.549790126404332e-08 0.0 
+        0.0 0.0 0.0 1.0 
+      }
+    }
+    
+    <VertexPool> Plane.001 {
+    
+      <Vertex> 0 {-5.000000 -0.000000 -5.000000
+        <UV>  {
+          0.001646 0.010586 
+        }
+      }
+      <Vertex> 1 {5.000000 -0.000000 -5.000000
+        <UV>  {
+          0.998355 0.010586 
+        }
+      }
+      <Vertex> 2 {5.000000 0.000000 5.000000
+        <UV>  {
+          0.998355 1.007295 
+        }
+      }
+      <Vertex> 3 {-5.000000 0.000000 5.000000
+        <UV>  {
+          0.001646 1.007295 
+        }
+      }}
+    
+    
+    <Polygon> {
+      <TRef> { Texture }
+      <MRef> { Material }
+      <Normal> {0.000000 -1.000000 0.000000}
+      <VertexRef> { 0 1 2 3 <Ref> { Plane.001 }} 
+    }
+  }
